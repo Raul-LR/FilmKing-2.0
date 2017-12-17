@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_height="192dp"
+        android:layout_width="match_parent">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:toolbarId="@+id/toolbar"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:layout_scrollInterpolator="@android:anim/decelerate_interpolator"
+            app:contentScrim="?attr/colorPrimary">
+
+            <ImageView
+                android:id="@+id/fondo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_collapseMode="parallax"
+                android:src="@android:drawable/sym_def_app_icon"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/imagen_preview"
+                tools:ignore="ContentDescription" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:behavior_overlapTop="32dp"
+        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10px"
+                tools:ignore="PxUsage">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="10dp"
+                    app:cardBackgroundColor="@color/cardview_light_background"
+                    app:cardUseCompatPadding="false"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardCornerRadius="4dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="20px">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="150dp"
+                            app:srcCompat="@drawable/imagen_preview"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="18dp"
+                            android:id="@+id/caratula_detalles"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            tools:ignore="ContentDescription,RtlHardcoded" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@android:drawable/btn_star_big_on"
+                            android:id="@+id/imageView3"
+                            android:layout_below="@+id/caratula_detalles"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_above="@+id/descripcion_detalles"
+                            tools:ignore="ContentDescription,RtlHardcoded" />
+
+                        <TextView
+                            android:text="Valoración"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/valoracion_detalles"
+                            android:layout_below="@+id/caratula_detalles"
+                            android:layout_toRightOf="@+id/imageView3"
+                            android:layout_toEndOf="@+id/imageView3"
+                            tools:ignore="HardcodedText,RtlHardcoded" />
+
+                        <TextView
+                            android:text="Descripción"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="28dp"
+                            android:id="@+id/descripcion_detalles"
+                            android:layout_below="@+id/valoracion_detalles"
+                            android:layout_alignLeft="@+id/caratula_detalles"
+                            android:layout_alignStart="@+id/caratula_detalles"
+                            android:textAllCaps="false"
+                            tools:ignore="HardcodedText,RtlHardcoded" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentTop="true"
+                            android:layout_toEndOf="@+id/caratula_detalles"
+                            android:layout_above="@+id/popularidad_detalles">
+
+                            <TextView
+                                android:text="Título Original"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tituloOriginal_detalles"
+                                android:textSize="14sp"
+                                android:textStyle="normal|italic"
+                                android:layout_below="@+id/titulo_detalles"
+                                android:layout_alignLeft="@+id/titulo_detalles"
+                                android:layout_alignStart="@+id/titulo_detalles"
+                                tools:ignore="HardcodedText,RtlHardcoded" />
+
+                            <TextView
+                                android:text="Estreno: "
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/estreno_detalles"
+                                android:layout_below="@+id/idiomaOriginal_detalles"
+                                android:layout_alignLeft="@+id/idiomaOriginal_detalles"
+                                android:layout_alignStart="@+id/idiomaOriginal_detalles"
+                                tools:ignore="HardcodedText,RtlHardcoded" />
+
+                            <TextView
+                                android:text="Título"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/titulo_detalles"
+                                android:textStyle="normal|bold"
+                                android:textSize="24sp"
+                                android:textColor="@android:color/background_dark"
+                                android:layout_marginStart="29dp"
+                                android:layout_marginTop="21dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentStart="true"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:text="Idioma original: "
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/idiomaOriginal_detalles"
+                                android:layout_below="@+id/tituloOriginal_detalles"
+                                android:layout_alignStart="@+id/tituloOriginal_detalles"
+                                tools:ignore="HardcodedText" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:text="Popularidad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/popularidad_detalles"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_below="@+id/valoracion_detalles"
+                            android:layout_alignParentEnd="true"
+                            tools:ignore="HardcodedText,RtlHardcoded" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="Peliculas Similares:"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView2"
+                        android:layout_marginTop="17dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true"
+                        tools:ignore="HardcodedText" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView2"
+                        android:layout_alignParentStart="true"
+                        android:id="@+id/lista_peliculasSimilares"
+                        android:layout_alignParentBottom="true" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>
